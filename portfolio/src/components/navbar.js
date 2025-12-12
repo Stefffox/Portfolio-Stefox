@@ -1,44 +1,32 @@
-// Récupère le conteneur
-const app = document.getElementById("app");
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-// Création de la navbar
-const nav = document.createElement("nav");
-nav.style.display = "flex";
-nav.style.justifyContent = "space-between";
-nav.style.alignItems = "center";
-nav.style.background = "#333";
-nav.style.padding = "10px";
-nav.style.color = "white";
+export default function Navbar() {
+	const [open, setOpen] = useState(false);
 
-// Logo
-const logo = document.createElement("div");
-logo.textContent = "MonSite";
-logo.style.fontSize = "20px";
+	return (
+		<nav className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
+			<div className="max-w-6xl mx-auto flex items-center justify-between p-4">
+				<h1 className="text-2xl font-bold">MonSite</h1>
 
-// Liste de liens
-const ul = document.createElement("ul");
-ul.style.display = "flex";
-ul.style.gap = "20px";
-ul.style.listStyle = "none";
-ul.style.margin = "0";
-ul.style.padding = "0";
+				<div className="hidden md:flex gap-6 text-lg">
+					<a href="#home" className="hover:text-blue-500">Accueil</a>
+					<a href="#features" className="hover:text-blue-500">Fonctionnalités</a>
+					<a href="#contact" className="hover:text-blue-500">Contact</a>
+				</div>
 
-// Les liens
-const pages = ["Accueil", "À propos", "Contact"];
+				<button className="md:hidden" onClick={() => setOpen(!open)}>
+					{open ? <X size={28} /> : <Menu size={28} />}
+				</button>
+			</div>
 
-pages.forEach(text => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.textContent = text;
-    a.href = "#" + text.toLowerCase().replace(" ", "");
-    a.style.color = "white";
-    a.style.textDecoration = "none";
-
-    li.appendChild(a);
-    ul.appendChild(li);
-});
-
-// Assemble tout
-nav.appendChild(logo);
-nav.appendChild(ul);
-app.appendChild(nav);
+			{open && (
+				<div className="md:hidden flex flex-col items-center gap-4 pb-4 text-lg">
+					<a href="#home" className="hover:text-blue-500" onClick={() => setOpen(false)}>Accueil</a>
+					<a href="#features" className="hover:text-blue-500" onClick={() => setOpen(false)}>Fonctionnalités</a>
+					<a href="#contact" className="hover:text-blue-500" onClick={() => setOpen(false)}>Contact</a>
+				</div>
+			)}
+		</nav>
+	);
+}
