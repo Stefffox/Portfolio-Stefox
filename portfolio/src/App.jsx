@@ -1,120 +1,88 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { CrepusculeScene } from './components/CrepusculeScene'
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="relative min-h-screen text-slate-100 selection:bg- feu-brune/30 overflow-x-hidden">
+      
+      {/* NOTRE SCÈNE D'AMBIANCE 3D (elle est derrière tout le reste) */}
+      <CrepusculeScene />
 
-      <div className="ticks"></div>
+      {/* --- LE CONTENU HTML (il est devant) --- */}
+      <div className="relative z-10">
+        
+        {/* NAVBAR (adaptée aux couleurs chaudes) */}
+        <nav className="flex justify-between items-center p-6 max-w-6xl mx-auto border-b border-white/5 backdrop-blur-sm">
+          <div className="text-xl font-black font-mono tracking-tighter bg-gradient-to-r from-feuille-brune via-feuille-rouge to-crépuscule-end bg-clip-text text-transparent">
+            NATHANAËL // L'AMBROISIE
+          </div>
+          <div className="space-x-8 text-sm font-medium text-slate-300">
+            <a href="#" className="hover:text-feuille-brune transition-colors">Mes Créas</a>
+            <a href="#" className="hover:text-feuille-brune transition-colors">Gameplay</a>
+            <a href="#" className="hover:text-feuille-brune transition-colors">IA</a>
+          </div>
+        </nav>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <main className="max-w-6xl mx-auto px-6 py-32">
+          
+          {/* HERO SECTION (Texte plus "organique") */}
+          <section className="mb-32">
+            <h2 className="text-sm font-mono text-feuille-brune mb-2">{">"} Au cœur du crépuscule</h2>
+            <h1 className="text-7xl md:text-9xl font-extrabold text-white tracking-tighter mb-8 leading-none">
+              Nathanaël<br />
+              <span className="text-slate-400">Dev. Art. Sound.</span>
+            </h1>
+            <p className="max-w-2xl text-xl text-slate-200 leading-relaxed font-light">
+              Étudiant en BUT Info à Toulouse. Je sculpte des mondes virtuels où la rigueur du code 
+              rencontre la mélancolie d'un dessin à l'encre et la vibration d'une note de piano. 
+              <span className="text-feuille-brune font-medium"> C'est ça, ma sauce.</span>
+            </p>
+            
+            <div className="mt-12 flex gap-5">
+              <button className="bg-feuille-brune hover:bg-feuille-rouge text-white px-10 py-4 rounded-xl font-bold transition-all shadow-xl shadow-feuille-brune/20 hover:scale-105">
+                Explorer l'Ambroisie
+              </button>
+              <button className="border-2 border-slate-700 hover:border-feuille-brune text-white px-10 py-4 rounded-xl font-bold transition-all">
+                Mon Setup / Outils
+              </button>
+            </div>
+          </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+          {/* GRID "À MA SAUCE" (Cartes plus "organiques") */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Card Gameplay */}
+            <div className="group p-10 bg-black/30 backdrop-blur-lg border border-white/5 rounded-3xl hover:border-feuille-brune/50 transition-all hover:scale-105 hover:-translate-y-1">
+              <div className="text-4xl mb-6 opacity-80 group-hover:scale-125 transition-transform">🌿</div>
+              <h3 className="text-2xl font-bold text-white mb-3">Moteur & Gameplay</h3>
+              <p className="text-base text-slate-300">C++ / C#. Je crée la physique, le "feel" et les interactions qui donnent vie à un univers.</p>
+            </div>
+
+            {/* Card IA */}
+            <div className="group p-10 bg-black/30 backdrop-blur-lg border border-white/5 rounded-3xl hover:border-feuille-rouge/50 transition-all hover:scale-105 hover:-translate-y-1">
+              <div className="text-4xl mb-6 opacity-80 group-hover:scale-125 transition-transform">🍂</div>
+              <h3 className="text-2xl font-bold text-white mb-3">IA & Comportement</h3>
+              <p className="text-base text-slate-300">Algorithmes d'agents autonomes. Je code l'âme des PNJs pour qu'ils s'intègrent dans le crépuscule.</p>
+            </div>
+
+            {/* Card Créa */}
+            <div className="group p-10 bg-black/30 backdrop-blur-lg border border-white/5 rounded-3xl hover:border-feuille-brune/50 transition-all hover:scale-105 hover:-translate-y-1">
+              <div className="text-4xl mb-6 opacity-80 group-hover:scale-125 transition-transform">🎨</div>
+              <h3 className="text-2xl font-bold text-white mb-3">Art & Son</h3>
+              <p className="text-base text-slate-300">Dessin numérique et composition. C'est là que je mets mes dessins et mes musiques.</p>
+            </div>
+
+          </div>
+
+        </main>
+
+        {/* Footer minimaliste et chaud */}
+        <footer className="py-12 text-center text-feuille-brune/50 text-xs border-t border-white/5 mt-24">
+          © 2026 — Ambroisie & Code au Crépuscule d'Automne
+        </footer>
+
+      </div>
+    </div>
   )
 }
 
