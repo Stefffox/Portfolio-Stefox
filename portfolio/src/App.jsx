@@ -11,17 +11,18 @@ function App() {
       {/* --- LE CONTENU HTML (il est devant) --- */}
       <div className="relative z-10">
         
-        {/* NAVBAR (adaptée aux couleurs chaudes) */}
-        <nav className="flex justify-between items-center p-6 max-w-6xl mx-auto border-b border-white/5 backdrop-blur-sm">
-          <div className="text-xl font-black font-mono tracking-tighter bg-gradient-to-r from-feuille-brune via-feuille-rouge to-crépuscule-end bg-clip-text text-transparent">
-            NATHANAËL // L'AMBROISIE
-          </div>
-          <div className="space-x-8 text-sm font-medium text-slate-300">
-            <a href="#" className="hover:text-feuille-brune transition-colors">Mes Créas</a>
-            <a href="#" className="hover:text-feuille-brune transition-colors">Gameplay</a>
-            <a href="#" className="hover:text-feuille-brune transition-colors">IA</a>
-          </div>
-        </nav>
+        {/* NAVBAR (Lisibilité renforcée pour fond illustré) */}
+{/* NAVBAR (Contraste Complémentaire) */}
+<nav className="flex justify-between items-center p-6 max-w-6xl mx-auto border-b border-white/10 backdrop-blur-md bg-[#1e1b4b]/20 sticky top-0 z-50">
+  <div className="text-xl font-black font-mono tracking-tighter bg-gradient-to-r from-cyan-200 via-blue-100 to-white bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+    NATHANAËL // L'AMBROISIE
+  </div>
+  <div className="space-x-8 text-sm font-bold text-cyan-50 drop-shadow-[0_1px_5px_rgba(0,0,0,1)]">
+    <a href="#" className="hover:text-amber-400 transition-colors">Mes Créas</a>
+    <a href="#" className="hover:text-amber-400 transition-colors">Gameplay</a>
+    <a href="#" className="hover:text-amber-400 transition-colors">IA</a>
+  </div>
+</nav>
 
         <main className="max-w-6xl mx-auto px-6 py-32">
           

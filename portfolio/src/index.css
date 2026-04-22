@@ -18,6 +18,25 @@ body::before {
   pointer-events: none;
 }
 
+/* Assure-toi que le body ne bloque pas le scroll */
+html, body {
+  height: 100%;
+  overflow: hidden; /* On laisse le conteneur de CrepusculeScene gérer le scroll */
+}
+
+/* Les règles magiques pour le Snap Scroll */
+.scroll-snap-y-mandatory {
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-behavior-smooth {
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-align-start {
+  scroll-snap-align: start;
+}
+
 @keyframes fall {
   0% {
     top: -10%;
