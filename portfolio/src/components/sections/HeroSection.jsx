@@ -32,8 +32,7 @@ export function HeroSection({ stefoxImg }) {
           Product Engineer · IA · Solo Maker
         </p>
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-none mb-8">
-          Nathanaël<br />
-          <span className="text-slate-400">Daunis.</span>
+          Nathanaël<span className="text-slate-400">.</span>
         </h1>
         <p className="text-xl md:text-2xl text-slate-300 font-light max-w-lg leading-relaxed">
           Je construis des choses que l'on ne voit pas sur GitHub.

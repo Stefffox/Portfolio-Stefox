@@ -80,7 +80,7 @@ export function ContactSection({ fursoImg }) {
       </div>
 
       <p className="absolute bottom-6 left-0 right-0 text-center text-slate-700 text-xs font-mono">
-        © 2026 - Nathanaël Daunis · Stéfox
+        © 2026 - Nathanaël · Stéfox
       </p>
     </section>
   );
