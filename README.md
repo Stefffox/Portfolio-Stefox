@@ -1,38 +1,67 @@
-# 🌊 Nathanaël DAUNIS' Iceberg Portfolio
+# Nathanaël Daunis - Portfolio
 
-Welcome to my **interactive portfolio**, designed as a deep dive into my creative universe and projects. What you see on the surface is just the beginning… dive in to explore the depths.
-
----
-
-## ⚓ Concept
-
-- **Surface**: Minimalist, clean… this is the landing page.  
-- **Depth**: Each layer reveals projects, prototypes, experiments, and creative ideas.  
-- **Immersion**: Smooth animations, ambient sounds (wind, waves), and interactive effects simulate a dive into my world.
+Portfolio personnel de Nathanaël Daunis (Stéfox), construit avec React + Vite + Tailwind CSS v4.
 
 ---
 
-## 🛠 Technologies
+## Concept
 
-- **Frontend**: React (Vite)  
-- **Animations**: Thinking about...  
-- **Audio**: Thinking about...  
-- **Deployment**: GitHub Pages
+Le portfolio est structuré autour du narratif **iceberg** : les repos publics GitHub donnent une image calme et creuse, mais en dessous tourne un assistant IA 24/7, un SaaS complet avec client réel, et des mois de travail invisible.
 
 ---
 
-## 🖼 Features
+## Structure
 
-Navigate through the portfolio via **scrolling and clicks** to explore different depths. Animated visuals and interactive effects for each project element. Ambient audio enhances immersion. Micro-interactions bring the “creative chaos” to life.
+6 sections en scroll-snap sur desktop, scroll naturel sur mobile :
+
+1. **Hero** - Nom, tagline, logo Stéfox en fond
+2. **L'Iceberg** - Contraste surface visible / masse immergée
+3. **Naos** - Assistant IA personnel (orbe GLSL en fond)
+4. **HSP Booking** - SaaS de réservation multi-tenant (dashboard en fond)
+5. **A propos** - Bio + stack technique
+6. **Contact** - Liens + section Stéfox
 
 ---
 
-## 🌐 Deployment
+## Technologies
 
-The portfolio will be live on GitHub Pages: https://Stefffox.github.io/Portfolio-Stefox
+- **Frontend** : React 19 + Vite
+- **Style** : Tailwind CSS v4
+- **Animations** : CSS natif (scroll-snap, fade-up, grain, mask gradients)
+- **Deploiement** : Vercel (root directory: `portfolio/`)
 
 ---
 
-## 📄 License
+## Lancer en local
 
-This project is under [**MIT License**](./LICENSE), see the file for details.
+```bash
+cd portfolio
+npm install
+npm run dev
+```
+
+## Deployer
+
+Le projet se deploie automatiquement sur Vercel a chaque push sur `main`.
+Root directory Vercel : `portfolio/`
+
+---
+
+## Assets
+
+Les images sont dans `portfolio/src/assets/` :
+
+| Fichier | Usage |
+|---|---|
+| `naos.png` | Screenshot UI Naos (section Naos) |
+| `hsp.png` | Screenshot analytics HSP Booking |
+| `stefox.png` | Logo Stéfox (hero) |
+| `furso.png` | Badge Kohaku par Erixalu (contact) |
+
+Le favicon (`portfolio/public/favicon.png`) est une copie du logo Stéfox.
+
+---
+
+## Licence
+
+[MIT](./LICENSE)
