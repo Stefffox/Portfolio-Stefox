@@ -1,64 +1,66 @@
 @import "tailwindcss";
 
 @theme {
-  --color-crépuscule-start: #1e1b4b; /* Indigo très sombre (le ciel) */
-  --color-crépuscule-end: #431407;   /* Orange brûlé (l'horizon) */
-  --color-feuille-brune: #a16207;   /* Jaune/Or */
-  --color-feuille-rouge: #991b1b;   /* Rouge */
+  --color-feuille-brune: #a16207;
+  --color-feuille-rouge: #991b1b;
 }
 
-/* On ajoute un grain "artistique" sur tout le site */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('data:image/svg+xml;base64,...'); /* Un bruit SVG léger */
-  opacity: 0.15;
-  z-index: 50;
-  pointer-events: none;
-}
-
-/* Assure-toi que le body ne bloque pas le scroll */
-html, body {
+html, body, #root {
   height: 100%;
-  overflow: hidden; /* On laisse le conteneur de CrepusculeScene gérer le scroll */
+  margin: 0;
+  padding: 0;
 }
 
-/* Les règles magiques pour le Snap Scroll */
-.scroll-snap-y-mandatory {
-  scroll-snap-type: y mandatory;
-}
-
-.scroll-behavior-smooth {
-  scroll-behavior: smooth;
-}
-
-.scroll-snap-align-start {
-  scroll-snap-align: start;
+/* Desktop uniquement : scroll capturé dans le conteneur snap */
+@media (min-width: 768px) {
+  html, body, #root {
+    overflow: hidden;
+  }
+  .snap-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  .snap-section {
+    scroll-snap-align: start;
+    height: 100vh;
+  }
 }
 
 @keyframes fall {
-  0% {
-    top: -10%;
-    transform: translateX(0) rotate(0deg);
-  }
-  25% {
-    transform: translateX(15px) rotate(90deg);
-  }
-  50% {
-    transform: translateX(-15px) rotate(180deg);
-  }
-  75% {
-    transform: translateX(15px) rotate(270deg);
-  }
-  100% {
-    top: 110%;
-    transform: translateX(0) rotate(360deg);
-  }
+  0%   { top: -5%;  transform: translateX(0px)   rotate(0deg);   }
+  25%  {             transform: translateX(22px)  rotate(90deg);  }
+  50%  {             transform: translateX(-22px) rotate(180deg); }
+  75%  {             transform: translateX(22px)  rotate(270deg); }
+  100% { top: 105%; transform: translateX(0px)   rotate(360deg); }
 }
 
 .animate-fall {
   position: absolute;
-  top: -10%;
+  top: -5%;
   animation: fall linear infinite;
+}
+
+/* Animations d'entrée des sections */
+.section-animate {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grain artistique — réduit la sensation de vide dans les grands aplats */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  z-index: 200;
+  pointer-events: none;
 }
