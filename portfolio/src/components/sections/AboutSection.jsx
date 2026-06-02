@@ -11,7 +11,7 @@ export function AboutSection() {
     <section
       id="about"
       className="snap-section w-full flex items-center px-8 md:px-16 py-24 md:py-0 relative"
-      style={{ background: 'linear-gradient(to bottom, #2c1f10 0%, #1e1409 100%)' }}
+      style={{ background: 'linear-gradient(to bottom, #131320 0%, #0e0e1a 100%)' }}
     >
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center section-animate">
         <div>
