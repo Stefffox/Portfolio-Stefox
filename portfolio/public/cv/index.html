@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Nathanaël Daunis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #e8722a;
+      --text: #1a1a1a;
+      --text-soft: #444;
+      --text-muted: #888;
+      --border: #e4e0db;
+      --sidebar-bg: #f8f6f3;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text);
+      background: #d4d0ca;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      background: white;
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+
+    /* ── SIDEBAR ─────────────────────────────── */
+    .sidebar {
+      background: var(--sidebar-bg);
+      padding: 1.6rem 1.2rem;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .identity {
+      text-align: center;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .photo-wrap {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.6rem;
+      border: 2px solid var(--border);
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .job-title {
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.35rem;
+      font-weight: 500;
+    }
+
+    .s-section { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .s-label {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-line {
+      font-size: 10.5px;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    .contact-line a {
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+    .contact-line a:hover { color: var(--accent); }
+
+    .skill { margin-bottom: 0.3rem; }
+
+    .skill-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .skill-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── MAIN ───────────────────────────────── */
+    .main {
+      padding: 1.6rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .section {}
+
+    .section-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .profil-text {
+      font-size: 12px;
+      color: var(--text-soft);
+      line-height: 1.85;
+    }
+
+    .entry { margin-bottom: 0.8rem; }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 12.5px;
+      color: var(--text);
+    }
+
+    .entry-date {
+      font-size: 10px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .entry-sub {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 500;
+      margin: 0.15rem 0 0.3rem;
+    }
+
+    .entry-desc {
+      font-size: 11px;
+      color: var(--text-soft);
+      line-height: 1.75;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.45rem;
+    }
+
+    .tag {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 2px 7px;
+      background: #f0ece6;
+      color: var(--text-soft);
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    @media print {
+      @page { margin: 0.4cm; }
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; width: 100%; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="identity">
+      <div class="photo-wrap">
+        <img src="photo.jpg" alt="Nathanaël Daunis">
+      </div>
+      <div class="name">Nathanaël<br>Daunis</div>
+      <div class="job-title">Développeur<br>Informatique</div>
+    </div>
+
+    <div class="s-section">
+      <div class="s-label">Contact</div>
+      <div class="contact-line">06 78 69 01 53</div>
+      <div class="contact-line"><a href="mailto:nathanael@lonearc.io">nathanael@lonearc.io</a></div>
+      <div class="contact-line">Toulouse, 31400</div>
+      <div class="contact-line"><a href="https://stefox.vercel.app">stefox.vercel.app</a></div>
+      <div class="contact-line"><a href="https://lonearc.io">lonearc.io</a></div>
+      <div class="contact-line"><a href="https://github.com/Stefffox">github.com/Stefffox</a></div>
+      <div class="contact-line"><a href="https://www.linkedin.com/in/nathanael-daunis-726665296/">linkedin/nathanael-daunis</a></div>
+    </div>
+
+    <div class="s-section">
+      <div class="s-label">Langages</div>
+      <div class="skill">
+        <div class="skill-name">TypeScript / JavaScript</div>
+        <div class="skill-sub">React, Node.js, Three.js</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Python</div>
+        <div class="skill-sub">Scripts, API, IA</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Web</div>
+        <div class="skill-sub">HTML5, CSS3, PHP</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">SQL</div>
+        <div class="skill-sub">MySQL, Oracle, PostgreSQL</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Java / C# / Ada</div>
+        <div class="skill-sub">POO, GUI, Godot, algorithmique</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Bash</div>
+        <div class="skill-sub">Automatisation</div>
+      </div>
+    </div>
+
+    <div class="s-section">
+      <div class="s-label">Outils</div>
+      <div class="skill">
+        <div class="skill-name">Git</div>
+        <div class="skill-sub">Branches, merges, conflits</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">IDE</div>
+        <div class="skill-sub">VS Code, Android Studio, Eclipse</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">BDD</div>
+        <div class="skill-sub">SQL Developer, Looping, APEX</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Déploiement</div>
+        <div class="skill-sub">Vercel, GitHub CI/CD</div>
+      </div>
+    </div>
+
+    <div class="s-section">
+      <div class="s-label">Langues</div>
+      <div class="skill">
+        <div class="skill-name">FR · Langue maternelle</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">EN · B1 intermédiaire</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <div class="section">
+      <div class="section-title">Profil</div>
+      <p class="profil-text">
+        Étudiant en BUT Informatique (2ème année), actuellement en stage développeur full-stack chez Helvetia Strategy Partners où j'ai conçu et livré seul un SaaS multi-tenant de A à Z. Je construis aussi des projets personnels en dehors du cursus : assistants IA, portfolio 3D. Autonome, curieux, à l'aise du back au front. Disponible en alternance.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Formation</div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">IUT Paul Sabatier, Toulouse (31)</div>
+          <div class="entry-date">09/2023 - Aujourd'hui</div>
+        </div>
+        <div class="entry-sub">BUT Informatique, 2ème année</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Lycée Las Cases, Lavaur (81)</div>
+          <div class="entry-date">09/2020 - 07/2023</div>
+        </div>
+        <div class="entry-sub">BAC STI2D option SIN, Mention Bien</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Projets</div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Naos : Assistant IA personnel</div>
+          <div class="entry-date">2026</div>
+        </div>
+        <div class="entry-desc">Assistant IA personnel always-on-top, contrôle vocal, mémoire vectorielle long-terme, contrôle Spotify. Interface visuelle en GLSL (orb OpenGL). Architecture Python + Claude API, reconn. vocale (faster-whisper), synthèse vocale (ElevenLabs), mémoire (ChromaDB).</div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Claude API</span>
+          <span class="tag">ElevenLabs</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">OpenGL/GLSL</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Portfolio 3D (stefox.vercel.app)</div>
+          <div class="entry-date">2026</div>
+        </div>
+        <div class="entry-desc">Portfolio personnel avec scène 3D interactive. Rendu temps réel dans le navigateur.</div>
+        <div class="tags">
+          <span class="tag">React 19</span>
+          <span class="tag">Three.js</span>
+          <span class="tag">React Three Fiber</span>
+          <span class="tag">Tailwind</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">HSP Booking : SaaS multi-tenant</div>
+          <div class="entry-date">2026 · stage HSP</div>
+        </div>
+        <div class="entry-desc">Architecture React/TypeScript + Supabase. Isolation multi-tenant via PostgreSQL RLS, paiements Stripe avec acomptes configurables, notifications email automatiques (J-1/H-2), 4 espaces de rôles distincts. Optimisation : 1 378 req/h → 280 (÷4).</div>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">PostgreSQL RLS</span>
+          <span class="tag">Stripe</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Application vente de graines (Java)</div>
+          <div class="entry-date">2025</div>
+        </div>
+        <div class="entry-desc">App desktop complète : catalogue, panier dynamique, paiement simulé, facture. Base de données intégrée via Maven. Projet de groupe (4 personnes).</div>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">WindowBuilder</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Maven</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Dashboard Oracle APEX (Binôme)</div>
+          <div class="entry-date">2025</div>
+        </div>
+        <div class="entry-desc">Tableaux de bord interactifs à partir de données CSV. Graphiques dynamiques, camemberts, statistiques avancées.</div>
+        <div class="tags">
+          <span class="tag">Oracle APEX</span>
+          <span class="tag">SQL avancé</span>
+          <span class="tag">Data Viz</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="section-title">Expérience</div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Stage développeur full-stack, Helvetia Strategy Partners</div>
+          <div class="entry-date">04/2026 - 06/2026</div>
+        </div>
+        <div class="entry-sub">Seul développeur dans une équipe de 3 · 8 semaines · Toulouse / Genève</div>
+        <div class="entry-desc">Mission : concevoir et livrer un produit SaaS prêt pour un premier client payant. Pivot produit vécu en direct (dashboard → plateforme de réservation). Collaboration quotidienne avec le dirigeant sur les arbitrages produit/technique.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Hôte de caisse, Leclerc Roques</div>
+          <div class="entry-date">07/2024 - Aujourd'hui</div>
+        </div>
+        <div class="entry-sub">12h / semaine, emploi étudiant</div>
+        <div class="entry-desc">Gestion des flux clients en environnement de grande distribution. Rigueur, polyvalence, travail en équipe.</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
