@@ -29,11 +29,15 @@ export function ContactSection({ fursoImg }) {
     >
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center section-animate">
         <div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/20 border border-green-700/20 mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-green-400 text-xs font-mono">Disponible · alternance sept. 2026</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
             On construit quelque chose ?
           </h2>
           <p className="text-slate-400 text-lg mb-10 font-light">
-            Collaboration, stage, projet commun... je suis là.
+            Alternance, collaboration, projet commun — je suis là.
           </p>
 
           <div className="flex flex-col gap-3 max-w-sm mb-10">

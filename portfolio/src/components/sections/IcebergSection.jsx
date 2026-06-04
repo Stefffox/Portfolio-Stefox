@@ -1,8 +1,3 @@
-const ABOVE = [
-  ['4', 'repos publics'],
-  ['∅', 'graphe visible'],
-];
-
 const BELOW = [
   ['24/7',  'assistant IA en prod'],
   ['SaaS',  'client réel · déployé'],
@@ -24,15 +19,6 @@ export function IcebergSection() {
         <p className="text-xl text-slate-500 mb-12 md:mb-16 font-light">
           Ce n'est pas là que ça se passe.
         </p>
-
-        <div className="flex gap-16 md:gap-28 mb-10 justify-center opacity-40">
-          {ABOVE.map(([stat, label]) => (
-            <div key={label} className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-slate-500 font-mono">{stat}</div>
-              <div className="text-xs text-slate-600 font-mono mt-2 tracking-wider">{label}</div>
-            </div>
-          ))}
-        </div>
 
         <div className="relative py-2 mb-10">
           <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/35 to-transparent" />
