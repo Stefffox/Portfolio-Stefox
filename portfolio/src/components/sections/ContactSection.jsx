@@ -37,7 +37,7 @@ export function ContactSection({ fursoImg }) {
             On construit quelque chose ?
           </h2>
           <p className="text-slate-400 text-lg mb-10 font-light">
-            Alternance, collaboration, projet commun — je suis là.
+            Alternance, collaboration, projet commun. Je suis là.
           </p>
 
           <div className="flex flex-col gap-3 max-w-sm mb-10">

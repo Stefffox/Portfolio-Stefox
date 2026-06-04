@@ -20,7 +20,7 @@ export function usePortfolio() {
       }))
     );
 
-    // Images optionnelles — silencieux si fichier absent
+    // Images optionnelles, silencieux si fichier absent
     IMAGE_IMPORTS.forEach(([key, load]) => {
       load()
         .then(m => setImages(prev => ({ ...prev, [key]: m.default })))
@@ -37,7 +37,7 @@ export function usePortfolio() {
     };
     container.addEventListener('scroll', onScroll, { passive: true });
 
-    // Animations d'entrée — IntersectionObserver sur chaque section
+    // Animations d'entrée via IntersectionObserver sur chaque section
     const animObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(({ target, isIntersecting }) => {
