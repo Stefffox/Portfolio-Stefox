@@ -61,6 +61,15 @@ export function ContactSection({ fursoImg }) {
               Je suis aussi <span className="text-slate-400 font-medium">Stéfox</span>, wolf/fox,
               créateur solo en devenir, quelque part entre un orbe IA et une vue de skyline en hauteur.
             </p>
+            <a
+              href="https://lonearc.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-3 text-xs font-mono text-slate-600 hover:text-slate-400 transition-colors group"
+            >
+              lonearc.io
+              <span className="group-hover:text-amber-400 transition-colors">→</span>
+            </a>
           </div>
         </div>
 
