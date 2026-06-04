@@ -1,3 +1,5 @@
+import { IcebergCanvas } from '../IcebergCanvas'
+
 const BELOW = [
   ['24/7',  'assistant IA en prod'],
   ['SaaS',  'client réel · déployé'],
@@ -16,16 +18,11 @@ export function IcebergSection() {
         <h2 className="text-4xl md:text-6xl font-black text-white mb-3 leading-tight">
           Mon GitHub a l'air calme.
         </h2>
-        <p className="text-xl text-slate-500 mb-12 md:mb-16 font-light">
+        <p className="text-xl text-slate-500 mb-8 md:mb-10 font-light">
           Ce n'est pas là que ça se passe.
         </p>
 
-        <div className="relative py-2 mb-10">
-          <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/35 to-transparent" />
-          <span className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-xs text-cyan-500/35 font-mono bg-[#0f172a] px-4">
-            ~ surface ~
-          </span>
-        </div>
+        <IcebergCanvas />
 
         <div className="flex flex-wrap gap-10 md:gap-16 justify-center">
           {BELOW.map(([stat, label]) => (
