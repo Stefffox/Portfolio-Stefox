@@ -12,6 +12,13 @@ const LINKS = [
     arrow: 'text-slate-500 group-hover:text-amber-400',
   },
   {
+    href:  'https://stefox.vercel.app/cv',
+    label: 'Curriculum Vitae',
+    className: 'bg-white/5 hover:bg-white/10 border-white/8 hover:border-amber-500/30',
+    arrow: 'text-slate-500 group-hover:text-amber-400',
+    icon:  '↓',
+  },
+  {
     href:  'mailto:nathanaeldaunis@gmail.com',
     label: 'nathanaeldaunis@gmail.com',
     className: 'bg-amber-900/20 hover:bg-amber-900/30 border-amber-800/25 hover:border-amber-500/40',
