@@ -19,8 +19,8 @@ const LINKS = [
     icon:  '↓',
   },
   {
-    href:  'mailto:nathanaeldaunis@gmail.com',
-    label: 'nathanaeldaunis@gmail.com',
+    href:  'mailto:nathanael@lonearc.io',
+    label: 'nathanael@lonearc.io',
     className: 'bg-amber-900/20 hover:bg-amber-900/30 border-amber-800/25 hover:border-amber-500/40',
     arrow: 'text-amber-500 group-hover:text-amber-300',
     icon:  '✉',
