@@ -4,19 +4,19 @@ import { NAOS_STACK } from '../../data/content';
 function NaosContent() {
   return (
     <>
-      <p className="font-mono text-xs text-purple-400/55 tracking-[0.3em] uppercase mb-4">
+      <p data-animate="typewriter" style={{ '--delay': '0ms' }} className="font-mono text-xs text-purple-400/55 tracking-[0.3em] uppercase mb-4">
         Projet · Repo privé · En production
       </p>
-      <h2 className="text-6xl md:text-7xl font-black text-white mb-4 tracking-tight">Naos</h2>
-      <p className="text-purple-300 font-light text-2xl mb-8">Un binôme numérique</p>
-      <p className="text-slate-300 leading-relaxed mb-10 text-base md:text-lg">
+      <h2 data-animate="slide-left" style={{ '--delay': '120ms' }} className="text-6xl md:text-7xl font-black text-white mb-4 tracking-tight">Naos</h2>
+      <p data-animate style={{ '--delay': '220ms' }} className="text-purple-300 font-light text-2xl mb-8">Un binôme numérique</p>
+      <p data-animate style={{ '--delay': '310ms' }} className="text-slate-300 leading-relaxed mb-10 text-base md:text-lg">
         Assistant IA personnel construit from scratch. Écoute en continu, parle en streaming phrase par phrase,
         mémorise via base vectorielle, contrôle Spotify et Steam. Tourne 24/7. Je l'utilise vraiment, tous les jours.
       </p>
-      <div className="flex flex-wrap gap-3 mb-8">
+      <div data-animate="pop" style={{ '--delay': '400ms' }} className="flex flex-wrap gap-3 mb-8">
         {NAOS_STACK.map(t => <Tag key={t} label={t} variant="purple" />)}
       </div>
-      <div className="flex items-center gap-2 text-sm text-slate-500 font-mono">
+      <div data-animate style={{ '--delay': '480ms' }} className="flex items-center gap-2 text-sm text-slate-500 font-mono">
         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
         En veille · actif
       </div>

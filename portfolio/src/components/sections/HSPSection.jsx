@@ -5,14 +5,14 @@ import { HSP_STACK, HSP_FEATURES } from '../../data/content';
 function HSPContent() {
   return (
     <>
-      <p className="font-mono text-xs text-slate-500 tracking-[0.3em] uppercase mb-3">
+      <p data-animate="typewriter" style={{ '--delay': '0ms' }} className="font-mono text-xs text-slate-500 tracking-[0.3em] uppercase mb-3">
         SaaS · Seul développeur · Déployé
       </p>
-      <h2 className="text-5xl font-black text-white mb-2 tracking-tight">HSP Booking</h2>
-      <p className="text-slate-400 font-light text-lg mb-6">
+      <h2 data-animate="slide-left" style={{ '--delay': '120ms' }} className="text-5xl font-black text-white mb-2 tracking-tight">HSP Booking</h2>
+      <p data-animate style={{ '--delay': '220ms' }} className="text-slate-400 font-light text-lg mb-6">
         Réservation multi-tenant pour salons de coiffure
       </p>
-      <ul className="space-y-1.5 mb-6">
+      <ul data-animate style={{ '--delay': '310ms' }} className="space-y-1.5 mb-6">
         {HSP_FEATURES.map(item => (
           <li key={item} className="flex items-start gap-2 text-slate-300 text-sm">
             <span className="text-amber-500 mt-0.5 shrink-0">›</span>
@@ -20,10 +20,10 @@ function HSPContent() {
           </li>
         ))}
       </ul>
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div data-animate="pop" style={{ '--delay': '400ms' }} className="flex flex-wrap gap-2 mb-4">
         {HSP_STACK.map(t => <Tag key={t} label={t} />)}
       </div>
-      <p className="text-xs text-slate-500 font-mono">
+      <p data-animate style={{ '--delay': '480ms' }} className="text-xs text-slate-500 font-mono">
         Marque <span className="text-slate-400">Helvetia Strategy Partners</span> · client genevois
       </p>
     </>

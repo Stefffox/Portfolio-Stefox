@@ -28,20 +28,20 @@ export function HeroSection({ stefoxImg }) {
       )}
 
       <div className="flex-1 flex flex-col justify-center px-8 md:px-16 relative z-10 md:max-w-[55%]">
-        <p className="font-mono text-sm text-amber-500/55 tracking-[0.3em] uppercase mb-6">
+        <p data-hero="typewriter" style={{ '--delay': '150ms' }} className="font-mono text-sm text-amber-500/55 tracking-[0.3em] uppercase mb-6">
           Product Engineer · IA · Solo Maker
         </p>
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-none mb-8">
+        <h1 data-hero="slide-left" style={{ '--delay': '320ms' }} className="text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-none mb-8">
           Nathanaël<span className="text-slate-400">.</span>
         </h1>
-        <p className="text-xl md:text-2xl text-slate-300 font-light max-w-lg leading-relaxed">
+        <p data-hero style={{ '--delay': '480ms' }} className="text-xl md:text-2xl text-slate-300 font-light max-w-lg leading-relaxed">
           Je construis des choses que l'on ne voit pas sur GitHub.
           <br />
           <span className="text-amber-400 font-medium">C'est le principe.</span>
         </p>
       </div>
 
-      <div className="flex flex-col items-center pb-8 gap-2 relative z-10">
+      <div data-hero style={{ '--delay': '680ms' }} className="flex flex-col items-center pb-8 gap-2 relative z-10">
         <span className="text-xs font-mono tracking-widest text-slate-600">scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-slate-600 to-transparent" />
       </div>

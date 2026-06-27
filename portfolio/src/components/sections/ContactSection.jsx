@@ -36,18 +36,18 @@ export function ContactSection({ fursoImg }) {
     >
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center section-animate">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/20 border border-green-700/20 mb-5">
+          <div data-animate="pop" style={{ '--delay': '0ms' }} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/20 border border-green-700/20 mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
             <span className="text-green-400 text-xs font-mono">Disponible · alternance sept. 2026</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
+          <h2 data-animate="slide-left" style={{ '--delay': '120ms' }} className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
             On construit quelque chose ?
           </h2>
-          <p className="text-slate-400 text-lg mb-10 font-light">
+          <p data-animate style={{ '--delay': '180ms' }} className="text-slate-400 text-lg mb-10 font-light">
             Alternance, collaboration, projet commun. Je suis là.
           </p>
 
-          <div className="flex flex-col gap-3 max-w-sm mb-10">
+          <div data-animate style={{ '--delay': '280ms' }} className="flex flex-col gap-3 max-w-sm mb-10">
             {LINKS.map(({ href, label, className, arrow, icon }) => (
               <a
                 key={href}
@@ -62,7 +62,7 @@ export function ContactSection({ fursoImg }) {
             ))}
           </div>
 
-          <div className="border-t border-white/5 pt-7">
+          <div data-animate style={{ '--delay': '400ms' }} className="border-t border-white/5 pt-7">
             <p className="text-xs text-slate-600 font-mono tracking-wider uppercase mb-2">En ligne</p>
             <p className="text-slate-500 text-sm leading-relaxed">
               Je suis aussi <span className="text-slate-400 font-medium">Stéfox</span>, wolf/fox,
