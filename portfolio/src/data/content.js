@@ -36,5 +36,5 @@ export const IMAGE_IMPORTS = [
   ['naos',   () => import('../assets/naos.png')],
   ['hsp',    () => import('../assets/hsp.png')],
   ['furso',  () => import('../assets/furso.png')],
-  ['stefox', () => import('../assets/stefox.png')],
+  ['stefox', () => import('../assets/stefox-hero.jpg')],
 ];

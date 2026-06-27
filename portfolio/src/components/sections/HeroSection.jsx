@@ -18,9 +18,11 @@ export function HeroSection({ stefoxImg }) {
           src={stefoxImg}
           alt=""
           aria-hidden="true"
-          className="absolute right-0 top-1/2 -translate-y-1/2 h-[75vh] w-auto hidden md:block pointer-events-none opacity-60"
+          className="absolute right-0 top-1/2 h-[85vh] w-auto hidden md:block pointer-events-none"
           style={{
-            maskImage: 'linear-gradient(to right, transparent 0%, black 14%, black 100%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+            transform: 'translateY(-50%) translateX(-20%)',
+            mixBlendMode: 'screen',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 18%, black 100%), linear-gradient(to bottom, transparent 0%, black 5%, black 52%, transparent 78%)',
             maskComposite: 'intersect',
             WebkitMaskComposite: 'source-in',
           }}
