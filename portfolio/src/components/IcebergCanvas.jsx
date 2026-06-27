@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useMemo, useRef } from 'react'
+import { useMemo, useRef, useState, useEffect } from 'react'
 
 function ParticleField() {
   const groupRef = useRef()
@@ -69,6 +69,15 @@ function ParticleField() {
 }
 
 export function IcebergCanvas() {
+  const [repoCount, setRepoCount] = useState(8)
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/Stefffox')
+      .then(r => r.json())
+      .then(data => setRepoCount(data.public_repos))
+      .catch(() => {})
+  }, [])
+
   return (
     <div className="relative w-full h-56 md:h-80 mb-10">
       <Canvas
@@ -84,7 +93,7 @@ export function IcebergCanvas() {
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/35 to-transparent" />
       </div>
       <div className="absolute top-5 left-6 pointer-events-none">
-        <div className="text-xl font-black text-slate-600/50 font-mono leading-none">8 repos</div>
+        <div className="text-xl font-black text-slate-600/50 font-mono leading-none">{repoCount} repos</div>
         <div className="text-xs text-slate-600/35 font-mono tracking-wider mt-1">visibles sur GitHub</div>
       </div>
       <div className="absolute bottom-10 left-6 pointer-events-none">
