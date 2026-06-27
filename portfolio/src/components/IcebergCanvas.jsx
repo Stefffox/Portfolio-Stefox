@@ -70,12 +70,34 @@ function ParticleField() {
 
 export function IcebergCanvas() {
   const [repoCount, setRepoCount] = useState(8)
+  const [privateCount, setPrivateCount] = useState(6)
+  const [totalPrivate, setTotalPrivate] = useState(null)
 
   useEffect(() => {
-    fetch('https://api.github.com/users/Stefffox')
-      .then(r => r.json())
-      .then(data => setRepoCount(data.public_repos))
-      .catch(() => {})
+    const token = import.meta.env.VITE_GITHUB_TOKEN
+    if (token) {
+      const headers = { Authorization: `Bearer ${token}` }
+      Promise.all([
+        fetch('https://api.github.com/user', { headers }).then(r => r.json()),
+        fetch('https://api.github.com/user/repos?type=private&per_page=100', { headers }).then(r => r.json()),
+      ])
+        .then(([user, privateRepos]) => {
+          setRepoCount(user.public_repos)
+          if (Array.isArray(privateRepos)) {
+            const oneMonthAgo = new Date()
+            oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
+            const active = privateRepos.filter(r => new Date(r.pushed_at) > oneMonthAgo)
+            setPrivateCount(active.length)
+            setTotalPrivate(privateRepos.length)
+          }
+        })
+        .catch(() => {})
+    } else {
+      fetch('https://api.github.com/users/Stefffox')
+        .then(r => r.json())
+        .then(data => setRepoCount(data.public_repos))
+        .catch(() => {})
+    }
   }, [])
 
   return (
@@ -97,9 +119,15 @@ export function IcebergCanvas() {
         <div className="text-xs text-slate-600/35 font-mono tracking-wider mt-1">visibles sur GitHub</div>
       </div>
       <div className="absolute bottom-10 left-6 pointer-events-none">
-        <div className="text-4xl font-black text-amber-400 font-mono leading-none">6 projets</div>
-        <div className="text-xs text-amber-600/60 font-mono tracking-wider mt-1">en production</div>
+        <div className="text-4xl font-black text-amber-400 font-mono leading-none">{privateCount} projets</div>
+        <div className="text-xs text-amber-600/60 font-mono tracking-wider mt-1">actifs ce mois-ci</div>
       </div>
+      {totalPrivate !== null && (
+        <div className="absolute bottom-10 right-6 text-right pointer-events-none">
+          <div className="text-4xl font-black text-white/70 font-mono leading-none">{repoCount + totalPrivate}</div>
+          <div className="text-xs text-slate-500/60 font-mono tracking-wider mt-1">repos au total</div>
+        </div>
+      )}
     </div>
   )
 }
