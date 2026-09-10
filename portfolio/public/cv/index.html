@@ -30,7 +30,7 @@
     .page {
       width: 210mm;
       min-height: 297mm;
-      margin: 24px auto;
+      margin: 12px auto;
       background: white;
       display: grid;
       grid-template-columns: 210px 1fr;
@@ -40,11 +40,11 @@
     /* ── SIDEBAR ─────────────────────────────── */
     .sidebar {
       background: var(--sidebar-bg);
-      padding: 1.6rem 1.2rem;
+      padding: 1.3rem 1.1rem;
       border-right: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      gap: 1.1rem;
+      gap: 0.85rem;
     }
 
     .identity {
@@ -97,7 +97,7 @@
       font-weight: 500;
     }
 
-    .s-section { display: flex; flex-direction: column; gap: 0.5rem; }
+    .s-section { display: flex; flex-direction: column; gap: 0.4rem; }
 
     .s-label {
       font-size: 8.5px;
@@ -137,11 +137,13 @@
 
     /* ── MAIN ───────────────────────────────── */
     .main {
-      padding: 1.6rem 1.6rem;
+      padding: 1.3rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 0.95rem;
     }
+
+    .section {}
 
     .section-title {
       font-size: 9px;
@@ -149,7 +151,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 0.7rem;
       display: flex;
       align-items: center;
       gap: 0.7rem;
@@ -165,10 +167,10 @@
     .profil-text {
       font-size: 12px;
       color: var(--text-soft);
-      line-height: 1.85;
+      line-height: 1.6;
     }
 
-    .entry { margin-bottom: 0.8rem; }
+    .entry { margin-bottom: 0.55rem; }
     .entry:last-child { margin-bottom: 0; }
 
     .entry-head {
@@ -201,7 +203,7 @@
     .entry-desc {
       font-size: 11px;
       color: var(--text-soft);
-      line-height: 1.75;
+      line-height: 1.55;
     }
 
     .tags {
@@ -222,45 +224,23 @@
       text-transform: uppercase;
     }
 
-    .download-btn {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      letter-spacing: 0.03em;
-      transition: opacity 0.15s;
-      z-index: 100;
-    }
-    .download-btn:hover { opacity: 0.85; }
-
     @media print {
       @page { margin: 0.4cm; }
       body { background: white; }
       .page { margin: 0; box-shadow: none; width: 100%; min-height: auto; }
-      .download-btn { display: none; }
     }
   </style>
 </head>
 <body>
-<button class="download-btn" onclick="window.print()">↓ Télécharger PDF</button>
 <div class="page">
 
   <aside class="sidebar">
     <div class="identity">
       <div class="photo-wrap">
-        <img src="/cv/photo.jpg" alt="Nathanaël Daunis">
+        <img src="photo.jpg" alt="Nathanaël Daunis">
       </div>
       <div class="name">Nathanaël<br>Daunis</div>
-      <div class="job-title">Développeur<br>Full-Stack</div>
+      <div class="job-title">Développeur<br>Informatique</div>
     </div>
 
     <div class="s-section">
@@ -278,7 +258,7 @@
       <div class="s-label">Langages</div>
       <div class="skill">
         <div class="skill-name">TypeScript / JavaScript</div>
-        <div class="skill-sub">React, Node.js, Three.js</div>
+        <div class="skill-sub">React, Node.js, TanStack Start, Three.js</div>
       </div>
       <div class="skill">
         <div class="skill-name">Python</div>
@@ -293,7 +273,7 @@
         <div class="skill-sub">MySQL, Oracle, PostgreSQL</div>
       </div>
       <div class="skill">
-        <div class="skill-name">Java / C# / Ada</div>
+        <div class="skill-name">Java / C# / C / Ada</div>
         <div class="skill-sub">POO, GUI, Godot, algorithmique</div>
       </div>
       <div class="skill">
@@ -318,7 +298,15 @@
       </div>
       <div class="skill">
         <div class="skill-name">Déploiement</div>
-        <div class="skill-sub">Vercel, GitHub CI/CD</div>
+        <div class="skill-sub">Vercel, GitHub CI/CD, Vite</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">IA</div>
+        <div class="skill-sub">Claude API, ChromaDB, Ollama, faster-whisper</div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Intégrations</div>
+        <div class="skill-sub">Stripe, Twilio, Resend, PDFMonkey</div>
       </div>
     </div>
 
@@ -338,7 +326,7 @@
     <div class="section">
       <div class="section-title">Profil</div>
       <p class="profil-text">
-        Étudiant en BUT Informatique (2ème année). J'ai récemment conçu et livré seul un SaaS multi-tenant de A à Z lors d'un stage développeur full-stack chez Helvetia Strategy Partners. Je construis aussi des projets personnels en dehors du cursus : assistants IA, portfolio 3D. Autonome, curieux, à l'aise du back au front. Disponible en alternance.
+        Étudiant en BUT Informatique (3ème année), recherche alternance. Stage full-stack chez Helvetia Strategy Partners : conception et livraison seul d'un SaaS multi-tenant. Freelance via ma micro-entreprise Lone Arc depuis juin 2026.
       </p>
     </div>
 
@@ -350,7 +338,7 @@
           <div class="entry-title">IUT Paul Sabatier, Toulouse (31)</div>
           <div class="entry-date">09/2023 - Aujourd'hui</div>
         </div>
-        <div class="entry-sub">BUT Informatique, 2ème année</div>
+        <div class="entry-sub">BUT Informatique, 3ème année</div>
       </div>
 
       <div class="entry">
@@ -370,7 +358,7 @@
           <div class="entry-title">Naos : Assistant IA personnel</div>
           <div class="entry-date">2026</div>
         </div>
-        <div class="entry-desc">Assistant IA personnel always-on-top, contrôle vocal, mémoire vectorielle long-terme, contrôle Spotify. Interface visuelle en GLSL (orb OpenGL). Architecture Python + Claude API, reconn. vocale (faster-whisper), synthèse vocale (ElevenLabs), mémoire (ChromaDB).</div>
+        <div class="entry-desc">Assistant IA personnel : contrôle vocal, mémoire vectorielle long-terme, contrôle Spotify, interface OpenGL/GLSL. Python, Claude API, faster-whisper, ElevenLabs, ChromaDB.</div>
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">Claude API</span>
@@ -399,7 +387,7 @@
           <div class="entry-title">HSP Booking : SaaS multi-tenant</div>
           <div class="entry-date">2026 · stage HSP</div>
         </div>
-        <div class="entry-desc">Architecture React/TypeScript + Supabase. Isolation multi-tenant via PostgreSQL RLS, paiements Stripe avec acomptes configurables, notifications email automatiques (J-1/H-2), 4 espaces de rôles distincts. Optimisation : 1 378 req/h → 280 (÷4).</div>
+        <div class="entry-desc">React/TypeScript + Supabase. Isolation multi-tenant (RLS), paiements Stripe, notifications automatiques, 4 rôles. Perf : -80% de requêtes (1 378 → 280 req/h).</div>
         <div class="tags">
           <span class="tag">React</span>
           <span class="tag">TypeScript</span>
@@ -411,15 +399,17 @@
 
       <div class="entry">
         <div class="entry-head">
-          <div class="entry-title">Application vente de graines (Java)</div>
-          <div class="entry-date">2025</div>
+          <div class="entry-title">CRM/ERP SaaS pour artisans du BTP (Lone Arc)</div>
+          <div class="entry-date">2026 · mission freelance</div>
         </div>
-        <div class="entry-desc">App desktop complète : catalogue, panier dynamique, paiement simulé, facture. Base de données intégrée via Maven. Projet de groupe (4 personnes).</div>
+        <div class="entry-desc">CRM/ERP multi-tenant (3 rôles) pour artisans du BTP : devis signature électronique, chantiers, facturation, assistant IA de chiffrage contraint au catalogue client.</div>
         <div class="tags">
-          <span class="tag">Java</span>
-          <span class="tag">WindowBuilder</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Maven</span>
+          <span class="tag">React</span>
+          <span class="tag">TanStack Start</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">PostgreSQL RLS</span>
+          <span class="tag">Claude API</span>
+          <span class="tag">Twilio</span>
         </div>
       </div>
 
@@ -443,11 +433,20 @@
 
       <div class="entry">
         <div class="entry-head">
+          <div class="entry-title">Freelance développeur, Lone Arc (micro-entreprise)</div>
+          <div class="entry-date">06/2026 - Aujourd'hui</div>
+        </div>
+        <div class="entry-sub">Micro-entreprise individuelle · mission client via Malt</div>
+        <div class="entry-desc">CRM/ERP SaaS multi-tenant pour artisans du BTP (3 rôles), en autonomie complète face à un client non-technique. 175 commits en 2 mois.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
           <div class="entry-title">Stage développeur full-stack, Helvetia Strategy Partners</div>
           <div class="entry-date">04/2026 - 06/2026</div>
         </div>
         <div class="entry-sub">Seul développeur dans une équipe de 3 · 8 semaines · Toulouse / Genève</div>
-        <div class="entry-desc">Mission : concevoir et livrer un produit SaaS prêt pour un premier client payant. Pivot produit vécu en direct (dashboard → plateforme de réservation). Collaboration quotidienne avec le dirigeant sur les arbitrages produit/technique.</div>
+        <div class="entry-desc">Conception et livraison d'un SaaS prêt pour un premier client payant. Périmètre reformulé en cours de route (dashboard → plateforme de réservation). Échanges quotidiens avec le dirigeant sur les choix produit/technique.</div>
       </div>
 
       <div class="entry">
@@ -455,8 +454,8 @@
           <div class="entry-title">Hôte de caisse, Leclerc Roques</div>
           <div class="entry-date">07/2024 - Aujourd'hui</div>
         </div>
-        <div class="entry-sub">12h / semaine, emploi étudiant</div>
-        <div class="entry-desc">Gestion des flux clients en environnement de grande distribution. Rigueur, polyvalence, travail en équipe.</div>
+        <div class="entry-sub">CDI · 12h / semaine, emploi étudiant</div>
+        <div class="entry-desc">Caisse et mise en rayon. Poste maintenu en parallèle des études depuis 2 ans.</div>
       </div>
     </div>
 
